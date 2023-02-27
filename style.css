@@ -49,91 +49,50 @@ a {
 
 }
 
-.categories {
-    display: inline-block;
-
-    list-style: none;
-  }
-  
-  .categories li {
-    display: inline-block;
-
-
-  }
-
-  .li-maitre {
-    position: relative;
-    margin: 75px;
-    right: 50px;
-    width: 100px;
-  }
-  
-.li-moyen {
-    display: contents;
-    position: relative;
-    right: 50px;
+.deroulant ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.li-moyen.a {
-    display: contents;
-    position: relative;
-    right: 50px;
-    padding-right: 600px;
+.deroulant li {
+  display: inline-block;
+  position: relative;
 }
 
+.deroulant ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
 
+.deroulant ul li:hover > ul {
+  display: inherit;
+}
 
-  .subcategories {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background-color: #ffffff;
-    display: none;
-    padding: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .categories li:hover .subcategories {
-    display: block;
-  }
-  
+.deroulant ul ul ul {
+  position: absolute;
+  left: 100%;
+  top:0;
+}
 
-  .subcategories li {
-    margin: 5px 0;
-  }
+.deroulant a {
+  display: block;
+  padding: 0 10px;
+}
 
-  .subcategories2 {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    display: none;
-    min-width: 200px;
-    z-index: 1;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .subcategories2 li {
-    display: block;
-  }
-  
-  .subcategories2 a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .subcategories2 a:hover {
-    background-color: #eee;
-  }
-  
-  .subcategories li:hover .subcategories2 {
-    display: block;
-  }
+.deroulant ul ul a {
+  padding: 10px;
+}
+
+.deroulant ul ul ul a {
+  padding: 10px 20px;
+}
+
+.deroulant ul ul li:hover > ul > li > a {
+  background: #f0f0f0;
+}
 
   /*Footer*/
 

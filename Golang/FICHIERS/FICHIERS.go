@@ -14,7 +14,8 @@ func main() {
         fmt.Println("2. Ajouter du texte dans le fichier")
         fmt.Println("3. Supprimer le contenu du fichier")
         fmt.Println("4. Remplacer le contenu du fichier")
-        fmt.Println("5. Quitter")
+        fmt.Println("5. Créer un nouveau fichier")
+        fmt.Println("6. Quitter")
 
         var choice int
         fmt.Scan(&choice)
@@ -65,6 +66,18 @@ func main() {
                 fmt.Println("Le contenu du fichier a été remplacé avec succès !")
             }
         case 5:
+            fmt.Println("Veuillez entrer le nom du nouveau fichier à créer :")
+            scanner := bufio.NewScanner(os.Stdin)
+            scanner.Scan()
+            filename := scanner.Text()
+
+            _, err := os.Create(filename)
+            if err != nil {
+                fmt.Println("Erreur lors de la création du fichier :", err)
+            } else {
+                fmt.Println("Le fichier", filename, "a été créé avec succès !")
+            }
+        case 6:
             fmt.Println("Au revoir !")
             return
         default:
